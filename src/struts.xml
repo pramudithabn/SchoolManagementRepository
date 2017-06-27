@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="default" namespace="/" extends="struts-default">
+		<action name="index" class="wpbn.pgis.action.signin.SignInAction"
+			method="showSignInFrom">
+			 <result name="success"  type="dispatcher">/WEB-INF/content/signin.jsp</result> 
+			
+		</action>
+	</package>
+
+	<package name="signin" namespace="/signin" extends="struts-default">
+		<action name="signin" class="wpbn.pgis.action.signin.SignInAction"
+			method="validateSignIn">
+			<result name="success"  type="dispatcher">/WEB-INF/content/home.jsp</result>
+			<result name="input">/WEB-INF/content/signin.jsp</result>
+		</action>
+
+
+	</package>
+	
+	<package name="admin" namespace="/admin" extends="struts-default">
+	
+		<action name="viewAdmissionsPage" class="wpbn.pgis.action.admin.AdminAction"
+			method="viewAdmissionsPage">
+			<result name="success"  type="dispatcher">/WEB-INF/content/admin/admissions.jsp</result>
+		</action>
+		
+		<action name="viewCoursesPage" class="wpbn.pgis.action.admin.AdminAction"
+			method="viewCoursesPage">
+			<result name="success"  type="dispatcher">/WEB-INF/content/admin/courses.jsp</result>
+		</action>
+		
+		<action name="viewStudentsPage" class="wpbn.pgis.action.admin.AdminAction"
+			method="viewStudentsPage">
+			<result name="success"  type="dispatcher">/WEB-INF/content/admin/students.jsp</result>
+		</action>
+		
+		<action name="viewUsersPage" class="wpbn.pgis.action.admin.AdminAction"
+			method="viewUsersPage">
+			<result name="success"  type="dispatcher">/WEB-INF/content/admin/users.jsp</result>
+		</action>
+		
+		<action name="viewHomePage" class="wpbn.pgis.action.admin.AdminAction"
+			method="viewHomePage">
+			<result name="success"  type="dispatcher">/WEB-INF/content/admin/home.jsp</result>
+		</action>
+	</package>
+	
+	<package name="student" namespace="/student" extends="struts-default">
+		
+		<action name="viewStudentsList" class="wpbn.pgis.action.student.ViewStudentListAction"
+			method="viewStudentsList">
+			<result name="success"  type="dispatcher">/WEB-INF/content/student/list.jsp</result>
+			
+		</action>
+		
+		<!-- <action name="editStudent" class="wpbn.pgis.action.student.ViewStudentListAction"
+			method="viewStudentsList">
+			<result name="success"  type="dispatcher">/WEB-INF/content/student/list.jsp</result>
+		</action> -->
+		
+		<action name="deleteStudent" class="wpbn.pgis.action.student.DeleteStudentAction"
+			method="deleteStudent">
+			
+			<result name="success" type="redirectAction">
+				<param name="actionName">viewStudentsList</param>
+				<param name="namespace">/student</param>
+			</result>
+			<result name="input">/WEB-INF/content/student/list.jsp</result>
+		</action>
+		
+		
+		
+		<action name="addNewStudent" class="wpbn.pgis.action.student.AddNewStudentAction"
+			method="viewAddStudentForm">
+			<result name="success">/WEB-INF/content/student/add.jsp</result>
+		</action>
+		
+		
+		
+		<action name="saveStudent" class="wpbn.pgis.action.student.SaveStudentAction" method="saveStudent">
+
+			<result name="success" type="redirectAction">
+				<param name="actionName">viewStudentsList</param>
+				<param name="namespace">/student</param>
+			</result>
+
+			<result name="input">/WEB-INF/content/student/add.jsp</result>
+		</action>
+		
+		
+	</package>
+	
+	<constant name="struts.ui.theme" value="simple" />
+</struts>

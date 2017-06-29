@@ -35,11 +35,24 @@
     /* On small screens, set height to 'auto' for sidenav and grid */
     @media screen and (max-width: 767px) {
       .sidenav {
-        height: auto;
+        height: 100;
         padding: 15px;
       }
       .row.content {height:auto;} 
     }
+    
+      .button {
+    display: block;
+    width: 200px;
+    height: 50px;
+    background: #4E9CAF;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+}
   </style>
 </head>
 <body>
@@ -52,7 +65,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="#">Logo</a>
+      <a class="navbar-brand" href="#">CRC</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
@@ -83,16 +96,77 @@
 <div class="container-fluid text-center">    
   <div class="row content">
     <div class="col-sm-2 sidenav">
-      <p><a href="#">View Courses List</a></p>
-      <p><a href="#">Add New Course</a></p>
-      <p><a href="#">Link</a></p>
+    <s:url action="viewCourseList" var="urlViewCourseList" namespace="/course"></s:url>
+	  
+      <p><s:a cssClass= "button" href="%{urlViewCourseList}" >View Courses List</s:a></p>
+      <p><s:a  cssClass= "button" href="#">Add New Course</s:a></p>
     </div>
     <div class="col-sm-8 text-left"> 
-      <h2>Courses</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      <h2 style="color:#1D1A9A">Courses</h2>
+      <p><i>The curriculum for the courses conducted by CRC was developed by NIE.</i> </p>
       <hr>
-      <h3>Test</h3>
-      <p>Lorem ipsum...</p>
+      <ul>
+      <li> <h3>Application for Basic/Intermediate Computer courses for G.C.E (O/L) and G.C.E (A/L)</h3>
+      		<ul>
+      			<li>Period: 03 Months (120hrs)</li>
+      			<li>Facility fee: Rs.2400/=</li>
+      			<li>Time: Week Days(7.30 am t0 1.30pm)
+      				<ul>
+      					<li>Operating Systems</li>
+      					<li>Word Processing</li>
+      					<li>Spread sheet</li>
+      					<li>Multimedia Presentation</li>
+      					<li>DBMS</li>
+      					<li>Programming</li>
+      				</ul>
+      			</li>
+      			
+      		</ul>
+      	</li>
+      	
+      	<li><h3>Special Courses</h3>
+      		<ul>
+      			<li>Kid Courses
+      				<ul>
+      					<li>Stage I
+      						<ul>
+      							<li>Basic Introduction of Computer for Grade 5,6,7,8 students</li>
+      							<li>Duration: 40hrs</li>
+      							<li>Facility fee: Rs.2000/=</li>
+      							<li>Time: Week Days and Week Ends(1.30 am t0 5.30pm)</li>
+      						</ul>
+      					</li>
+      					
+      					<li>Stage II
+      						<ul>
+      							<li>Basic Introduction of Computer for Grade 9,10,11 students</li>
+      							<li>Duration: 40hrs</li>
+      							<li>Facility fee: Rs.2000/=</li>
+      							<li>Time: Week Days and Week Ends(1.30 am t0 5.30pm)</li>
+      						</ul>
+      					</li>
+      				</ul>
+      			</li>
+      			<li><h3>Advanced Courses</h3>
+      				<ol>
+      					<li>Computer Application Assistant - N.V.Q Level3</li>
+      					<li>Certificate of Office Application</li>
+      					<li>Certificate in Web Designing</li>
+      					<li>Certificate in Graphics Designing and Animation</li>
+      					<li>Certificate in PC Assembly</li>
+      					<li>Certificate in Computer Networking</li>
+      					<li>Certificate in Desktop Publishing</li>
+      					<li>Certificate in Auto CAD (Special Course)</li>
+      					
+      				</ol>
+      			</li>
+      		</ul>
+      	</li>
+      	
+      	
+      </ul>
+     
+    
     </div>
     <div class="col-sm-2 sidenav">
       <div class="well">
@@ -106,7 +180,7 @@
 </div>
 
 <footer class="container-fluid text-center">
-  <p>Footer Text</p>
+  <p>©2017 Copyrights WPBN</p>
 </footer>
 
 </body>

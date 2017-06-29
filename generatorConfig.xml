@@ -29,11 +29,11 @@
 		
 
 		<table tableName="user" domainObjectName="User"></table>
-		<table tableName="course" domainObjectName="Course"></table>
-		<table tableName="student" domainObjectName="Student" ></table>
 		<table tableName="instructor" domainObjectName="Instructor"></table>
 		<table tableName="class" domainObjectName="Class"></table>
-
+		<table tableName="student" domainObjectName="Student" ></table>
+		<table tableName="course" domainObjectName="Course"></table>
+		
 	</context>
 
 </generatorConfiguration>

@@ -63,6 +63,31 @@
       }
       .row.content {height:auto;} 
     }
+    
+     
+    .button {
+    display: block;
+    width: 150px;
+    height: 40px;
+    background: #4E9CAF;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    }
+    .ft{
+    	margin-top: 10px;
+    }
+    
+    .dashItem{
+    width: 150px;
+   	height: 150px;
+    background: #C9C8F2;
+    font-size: 15px;
+    color: white;
+    }
   </style>
 </head>
 <body>
@@ -75,7 +100,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="#">Logo</a>
+      <a class="navbar-brand" href="#">CRC</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
@@ -100,7 +125,10 @@
              
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+      
+      
+    		 <s:url action="signOut" var="urlSignOut" namespace="/signin"></s:url>
+     	     <li><s:a href="%{urlSignOut}"><span class="glyphicon glyphicon-log-in"></span> Sign out</s:a></li>
       </ul>
     </div>
   </div>
@@ -114,11 +142,52 @@
       <p><a href="#">Link</a></p>
     </div>
     <div class="col-sm-8 text-left"> 
-      <h1>Welcome</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-      <hr>
-      <h3>Test</h3>
-      <p>Lorem ipsum...</p>
+      <h3>Admin Dashboard</h3>
+      
+      <div class="row">
+  
+     <div class="col-sm-3">
+      <div class="well dashItem">
+        <s:url action="viewStudentsList" var="urlViewStudentsList" namespace="/student"></s:url>
+	  <p><s:a href="%{urlViewStudentsList}">View Students</s:a></p>
+      </div>
+      <div class="well dashItem">
+        <s:url action="addNewStudent" var="urlAddStudent" namespace="/student"></s:url>
+	  <p><s:a href="%{urlAddStudent}">Register Student</s:a></p>
+      </div>
+    </div>
+    
+    <div class="col-sm-3">
+      <div class="well">
+       <p>Some text..</p>
+      </div>
+      <div class="well">
+       <p>Some text..</p>
+      </div>
+    </div>
+    
+    <div class="col-sm-3">
+      <div class="well">
+       <p>Some text..</p>
+      </div>
+      <div class="well">
+       <p>Some text..</p>
+      </div>
+    </div>  
+    
+    <div class="col-sm-3">
+      <div class="well">
+       <p>Some text..</p>
+      </div>
+      <div class="well">
+       <p>Some text..</p>
+      </div>
+    </div>  
+  </div>
+      
+      
+	  
+	 
     </div>
     <div class="col-sm-2 sidenav">
       <div class="well">
@@ -131,7 +200,7 @@
   </div>
 </div>
 
-<footer class="container-fluid text-center">
+<footer class="container-fluid text-center ft">
   <p>Footer Text</p>
 </footer>
 

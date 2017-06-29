@@ -11,8 +11,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   
   
-  
-  <link rel="stylesheet" href="/css/styles.css">
+  <link href="${pageContext.request.contextPath}/css/styles.css" rel="stylesheet" type="text/css"/>
  	<style>
     /* Remove the navbar's default margin-bottom and rounded borders */ 
     .navbar {
@@ -106,14 +105,10 @@
 	  <s:url action="addNewStudent" var="urlAddStudent" namespace="/student"></s:url>
 	  <p><s:a cssClass="button" href="%{urlAddStudent}">Register Student</s:a></p>
       
-      <p><a href="#">Link</a></p>
     </div>
     <div class="col-sm-8 text-left"> 
-      <h1>Students</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-      <hr>
-      <h3>Test</h3>
-      <p>Lorem ipsum...</p>
+      <h3>Students</h3>
+      
     </div>
     <div class="col-sm-2 sidenav">
       <div class="well">
@@ -127,7 +122,7 @@
 </div>
 
 <footer class="container-fluid text-center">
-  <p>Footer Text</p>
+  <p>©2017 Copyrights WPBN</p>
 </footer>
 
 </body>

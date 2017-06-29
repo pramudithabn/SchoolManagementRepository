@@ -5,17 +5,34 @@
 <struts>
 	<package name="default" namespace="/" extends="struts-default">
 		<action name="index" class="wpbn.pgis.action.signin.SignInAction"
-			method="showSignInFrom">
-			 <result name="success"  type="dispatcher">/WEB-INF/content/signin.jsp</result> 
+			method="showStartUpPage">
+			 <result name="success"  type="dispatcher">/WEB-INF/content/start.jsp</result> 
 			
 		</action>
+		
 	</package>
+	
+	
 
 	<package name="signin" namespace="/signin" extends="struts-default">
+	
+		<action name="showSignInFrom" class="wpbn.pgis.action.signin.SignInAction"
+			method="showSignInFrom">
+			 <result name="success"  type="dispatcher">/WEB-INF/content/signin.jsp</result> 
+		</action>
 		<action name="signin" class="wpbn.pgis.action.signin.SignInAction"
 			method="validateSignIn">
-			<result name="success"  type="dispatcher">/WEB-INF/content/home.jsp</result>
+			<result name="error">/WEB-INF/content/signIn.jsp</result>
 			<result name="input">/WEB-INF/content/signin.jsp</result>
+			<result name="admin"  type="dispatcher">/WEB-INF/content/admin/home.jsp</result>
+			<result name="student"  type="dispatcher">/WEB-INF/content/student/home.jsp</result>
+			<result name="instructor"  type="dispatcher">/WEB-INF/content/instructor/home.jsp</result>
+			
+		</action>
+		
+		<action name="signOut" class="wpbn.pgis.action.signin.SignInAction"
+			method="signOut">
+			 <result name="success"  type="dispatcher">/WEB-INF/content/start.jsp</result> 
 		</action>
 
 
@@ -57,11 +74,6 @@
 			
 		</action>
 		
-		<!-- <action name="editStudent" class="wpbn.pgis.action.student.ViewStudentListAction"
-			method="viewStudentsList">
-			<result name="success"  type="dispatcher">/WEB-INF/content/student/list.jsp</result>
-		</action> -->
-		
 		<action name="deleteStudent" class="wpbn.pgis.action.student.DeleteStudentAction"
 			method="deleteStudent">
 			
@@ -91,8 +103,65 @@
 			<result name="input">/WEB-INF/content/student/add.jsp</result>
 		</action>
 		
+		<action name="editStudent" class="wpbn.pgis.action.student.EditStudentAction" method="editStudent">
+				<result name="success">/WEB-INF/content/student/edit.jsp</result>
+		</action>
 		
+		<action name="updateStudent" class="wpbn.pgis.action.student.UpdateStudentAction" method="updateStudent">
+			<result name="success">/WEB-INF/content/student/view.jsp</result>
+			<result name="input">/WEB-INF/content/student/edit.jsp</result>
+		</action>
+		</package>
+	
+	<package name="course" namespace="/course" extends="struts-default">
+		
+		<action name="viewCourseList" class="wpbn.pgis.action.course.ViewCourseListAction"
+			method="viewCourseList">
+			<result name="success"  type="dispatcher">/WEB-INF/content/course/list.jsp</result>
+		</action>
+		
+		
+		
+		<action name="deleteCourse" class="wpbn.pgis.action.course.DeleteCourseAction"
+			method="deleteCourse">
+			
+			<result name="success" type="redirectAction">
+				<param name="actionName">viewCourseList</param>
+				<param name="namespace">/course</param>
+			</result>
+			<result name="input">/WEB-INF/content/course/list.jsp</result>
+		</action>
+		
+		<action name="editCourse" class="wpbn.pgis.action.course.EditCourseAction" method="editCourse">
+				<result name="success">/WEB-INF/content/course/edit.jsp</result>
+		</action>
+		
+		
+		<action name="addCourse" class="wpbn.pgis.action.course.AddCourseAction"
+			method="viewAddCourseForm">
+			<result name="success">/WEB-INF/content/course/add.jsp</result>
+		</action>
+		
+		
+		
+		<action name="saveCourse" class="wpbn.pgis.action.course.AddCourseAction" method="saveCourse">
+
+			<result name="success" type="redirectAction">
+				<param name="actionName">viewCourseList</param>
+				<param name="namespace">/course</param>
+			</result>
+
+			<result name="input">/WEB-INF/content/course/add.jsp</result>
+		</action>
+		
+		<action name="editCourse" class="wpbn.pgis.action.course.EditCourseAction" method="editCourse">
+				<result name="success">/WEB-INF/content/course/edit.jsp</result>
+		</action>
+		
+	
 	</package>
+	
+	
 	
 	<constant name="struts.ui.theme" value="simple" />
 </struts>

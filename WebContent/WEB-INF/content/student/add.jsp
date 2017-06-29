@@ -42,7 +42,7 @@
       .row.content {height:auto;} 
     }
     
-    .button {
+      .button {
     display: block;
     width: 200px;
     height: 50px;
@@ -52,6 +52,7 @@
     border-radius: 5px;
     color: white;
     font-weight: bold;
+    font-size: 20px;
 }
   </style>
 </head>
@@ -117,7 +118,8 @@
     <s:textfield name="nameOfInputVal" value="%{#formattedVal}" key="labelkey" /> --%>
     
     
-	<s:textfield label="Date Of Birth" name="student.dob"></s:textfield>
+	<s:textfield label="Date Of Birth (DD-MM-YYYY)" name="student.dob"></s:textfield>
+	<!-- <p><i>Date format: DD-MM-YYYY</i></p> -->
 	<s:textfield label="Gender" name="student.gender"></s:textfield>
 	<s:textfield label="NIC" name="student.nic"></s:textfield>
 	<s:textfield label="Address" name="student.address"></s:textfield>

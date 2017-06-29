@@ -32,4 +32,16 @@ public class StudentServiceImpl implements StudentService{
 		return studentMapper.insertSelective(student);
 	}
 
+	@Override
+	public Student getStudentById(String id) {
+		
+		return studentMapper.findById(id);
+	}
+
+	@Override
+	public int UpdateStudent(Student student) {
+		
+		return studentMapper.updateByPrimaryKeySelective(student);
+	}
+
 }

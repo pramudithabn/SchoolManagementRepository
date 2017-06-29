@@ -52,6 +52,7 @@
     border-radius: 5px;
     color: white;
     font-weight: bold;
+    font-size:20px;
 }
   </style>
 </head>
@@ -99,14 +100,14 @@
 	  <p><s:a cssClass="button" href="%{urlViewStudentsList}">View Students List</s:a></p> --%>
 	  
       <s:url action="addNewStudent" var="urlAddStudent" namespace="/student"></s:url>
-	  <p><s:a cssClass="button" href="%{urlAddStudent}">Register New Student</s:a></p>
+	  <p><s:a cssClass="button" href="%{urlAddStudent}">Register Student</s:a></p>
       
       <p><a href="#">Link</a></p>
     </div>
     
     <!-- Content goes here -->
     <div class="col-sm-8 text-left"> 
-      <h3>Registered Students List</h3>
+      <h2>Registered Students List</h2>
       
       	
       
@@ -129,7 +130,6 @@
 			<th>GENDER</th>
 			<th>SCHOOL</th>
 			<th>NIC</th>
-
 
 		</tr>
 		
@@ -176,7 +176,7 @@
 </div>
 
 <footer class="container-fluid text-center">
-  <p>Footer Text</p>
+  <p>©2017 Copyrights WPBN</p>
 </footer>
 
 </body>

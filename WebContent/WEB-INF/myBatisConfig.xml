@@ -14,11 +14,11 @@
 		</environment>
 	</environments>
 	<mappers>
-		<mapper resource="wpbn/pgis/entity/xml/UserMapper.xml" />
-		<mapper resource="wpbn/pgis/entity/xml/StudentMapper.xml" />
-		<mapper resource="wpbn/pgis/entity/xml/CourseMapper.xml" />
-		<mapper resource="wpbn/pgis/entity/xml/InstructorMapper.xml" />
-		<mapper resource="wpbn/pgis/entity/xml/ClassMapper.xml" />
+		<mapper resource="wpbn/pgis/entity/xml/UserMapper.xml"/>
+		<mapper resource="wpbn/pgis/entity/xml/StudentMapper.xml"/>
+		<mapper resource="wpbn/pgis/entity/xml/CourseMapper.xml"/>
+		<mapper resource="wpbn/pgis/entity/xml/InstructorMapper.xml"/>
+		<mapper resource="wpbn/pgis/entity/xml/ClassMapper.xml"/>
 		
 	</mappers>
 </configuration>
